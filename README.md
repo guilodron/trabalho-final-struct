@@ -1,2 +1,7 @@
-# trabalho-final-struct
-Trabalho final do trainee struct 2020
+# Trabalho Final Trainee Struct 2020
+
+## Grupo:
+
+- Guilherme Rodrigues
+- Gabriel Xavier
+- Gabriel Cruz
