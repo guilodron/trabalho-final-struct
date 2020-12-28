@@ -1,0 +1,33 @@
+Table Movies {
+  movie_id integer [pk, not null]
+  name varchar [not null]
+  release_date datetime 
+  genre varchar
+  description text
+  trailer iframe
+  director varchar
+  final_score integer
+  pictures images
+  
+}
+
+Table Users {
+  user_id integer [pk, not null]
+  name varchar [not null]
+  favorite_genre varchar
+  profile_picture image
+  bio text
+  administrator boolean
+  
+}
+
+Table Reviews {
+  review_id integer [pk, not null]
+  movie_id integer [ref: > Movies.movie_id]
+  score integer
+  reviewer varchar [ref: > Users.name]
+  reviewer_picture image [ref: > Users.profile_picture]
+  comment text
+  
+}
+
