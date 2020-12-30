@@ -22,11 +22,9 @@ Table Users {
 }
 
 Table Reviews {
-  review_id integer [pk, not null]
+  review_id integer [ref: > Users.user_id]
   movie_id integer [ref: > Movies.movie_id]
   score integer
-  reviewer varchar [ref: > Users.name]
-  reviewer_picture image [ref: > Users.profile_picture]
   comment text
   
 }
