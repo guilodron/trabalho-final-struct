@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  release_date: 2021-01-01 19:09:44
+  genres: MyString
+  description: MyText
+  director: MyString
+  final_score: 1
+
+two:
+  name: MyString
+  release_date: 2021-01-01 19:09:44
+  genres: MyString
+  description: MyText
+  director: MyString
+  final_score: 1
