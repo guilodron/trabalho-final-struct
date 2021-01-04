@@ -1,0 +1,8 @@
+
+<%=form_with model:@user, url: :new_user, method: :post do |form| %>
+  <%=form.label :email %>
+  <%=form.email_field :email %>
+  <%=form.label :password%>
+  <%=form.password_field :password%>
+  <%=form.submit "Cadastrar" %>
+<% end %>
