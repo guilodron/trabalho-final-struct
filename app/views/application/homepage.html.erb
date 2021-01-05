@@ -1,0 +1,8 @@
+<h1>Página inicial</h1>
+
+<!--Verificando se o usuário está logado ou não -->
+<% if current_user %>
+    <h2> Email: <%= current_user.email %> está logado </h2>
+<% else %>
+    <h2>Usuário não logado</h2>
+<% end %>
