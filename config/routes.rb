@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   scope 'users' do
     get 'novo_usuario', to: 'users#new', as: :new_user
-    post 'novo_usuario', to: 'user#create'
+    post 'novo_usuario', to: 'users#create'
   end
 
   scope 'sessions' do
