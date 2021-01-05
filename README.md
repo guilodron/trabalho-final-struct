@@ -42,6 +42,11 @@ O trabalho consiste em desenvolver uma plataforma de avaliação de filmes.
 
 <img src="https://i.imgur.com/VCACkPu.png" alt="all-movies" >
 
+## Perfil
+
+<img src="https://i.imgur.com/M1Z3Heo.png" alt="all-movies" >
+
+
 
 
 
