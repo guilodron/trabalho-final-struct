@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def show
+    @user = User.find(params[:id])
+  end
+
   def new
     @user = User.new
   end
@@ -9,6 +13,20 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       render 'new'
+    end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    begin
+      @user.update!(user_params)
+      redirect_to root_path
+    rescue StandardError => e
+      render 'edit'
     end
   end
 
