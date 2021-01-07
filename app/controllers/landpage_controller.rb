@@ -1,0 +1,2 @@
+class LandpageController < ApplicationController
+end
