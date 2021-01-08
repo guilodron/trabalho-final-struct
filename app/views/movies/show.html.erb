@@ -1,0 +1,32 @@
+<p>
+    <strong>Name:</strong>
+    <%= @movie.name %>
+</p>
+
+<p>
+    <strong>Release_date:</strong>
+    <%= @movie.release_date %>
+</p>
+
+<p>
+    <strong>Genres:</strong>
+    <%= @movie.genres %>
+</p>
+
+<p>
+    <strong>Description:</strong>
+    <%= @movie.description %>
+</p>
+
+<p>
+    <strong>Director:</strong>
+    <%= @movie.director %>
+</p>
+
+<p>
+    <strong>Final_score:</strong>
+    <%= @movie.final_score %>
+</p>
+
+<%= link_to 'Editar', edit_movie_path(@movie) %>
+<%= link_to 'Voltar', index_movies_path %>

@@ -1,0 +1,37 @@
+<%= form_with(model: movie, url: :new_movie, method: :post) do |form| %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :release_date %>
+    <%= form.number_field :release_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genres %>
+    <%= form.text_field :genres %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :director %>
+    <%= form.text_field :director %>
+  </div>
+
+  <div class="field">
+    <%= form.label :final_score %>
+    <%= form.text_field :final_score %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>

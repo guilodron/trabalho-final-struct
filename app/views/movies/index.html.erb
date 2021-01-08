@@ -1,0 +1,32 @@
+<p>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Release_date</th>
+            <th>Genres</th>
+            <th>Description</th>
+            <th>Director</th>
+            <th>Final_score</th>
+            <th colspan="6"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @movies.each do |movie| %>
+            <tr>
+                <td><%= movie.name %></td>
+                <td><%= movie.release_date %></td>
+                <td><%= movie.genres %></td>
+                <td><%= movie.description %></td>
+                <td><%= movie.director %></td>
+                <td><%= movie.final_score %></td>
+                <td><%= link_to 'Mostrar', show_movie_path(movie) %></td>
+                <td><%= link_to 'Editar', edit_movie_path(movie) %></td>
+                <td><%= link_to 'Apagar', destroy_movie_path(movie), method: :delete, data: { confirm: 'Tem certeza disso?'} %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+</p>
+<%= link_to 'Novo filme', new_movie_path %>
