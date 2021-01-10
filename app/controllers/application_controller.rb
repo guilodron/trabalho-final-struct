@@ -1,2 +1,5 @@
 class ApplicationController < ActionController::Base
-end
+    def homepage
+      @todos = User.all
+    end
+  end

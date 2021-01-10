@@ -1,0 +1,54 @@
+//os margin serao adicionados depois
+.user {
+    background-color: #E5E5E5;
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+  
+    .col {
+      height: 100%;
+    }
+  
+    #profile-picture {
+      width: 17.60vh;
+      height: 17.60vh;
+    }
+  
+    #big-label {
+      color: #E43E54;
+      font-size: 1.45vw;
+      width: 15.83vw;
+      height: 1.51vw;
+  
+    }
+  
+    .text-label {
+      color: #E43E54;
+    }
+  
+    #button {
+      text-decoration: none;
+      color: purple;
+      text-align: right;
+      transition: 1.5s;
+    }
+    #button:hover {
+      color: #515151;
+    }
+    .col-8 {
+      padding: 1vw;
+      margin: 0 0 1vh 0;
+      background-color: white;
+      transition: 0.2s;
+  
+    }
+    .col-8:hover{
+      transform: scale(1.1);
+    }
+    .col {
+      margin: 0 7vh 0 7vh;
+    }
+    .movie-review{
+      color:#E43E54;
+      text-align: left;
+    }
+  }

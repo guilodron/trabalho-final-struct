@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root "application#homepage"
 
   scope 'users' do
-    get 'novo_usuario', to: 'users#new', as: :new_user
-    post 'novo_usuario', to: 'users#create'
+    get 'usuario/:id', to: 'users#show', as: 'show_user'
+    get '/cadastro', to: 'users#new', as: 'new_user'
+    post '/cadastro', to: 'users#create'
+    get 'editar/:id', to: 'users#edit', as: 'edit_user'
+    patch 'editar/:id', to: 'users#update'
   end
 
   scope 'sessions' do
