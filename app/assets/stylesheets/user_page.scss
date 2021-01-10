@@ -15,7 +15,7 @@
 
   #big-label {
     color: #E43E54;
-    font-size: 1.67vw;
+    font-size: 1.45vw;
     width: 15.83vw;
     height: 1.51vw;
 
@@ -36,7 +36,7 @@
   }
   .col-8 {
     padding: 1vw;
-    margin: 5vh 0 5vh 0;
+    margin: 0 0 1vh 0;
     background-color: white;
     transition: 0.2s;
 
@@ -44,7 +44,11 @@
   .col-8:hover{
     transform: scale(1.1);
   }
-  .text {
-
+  .col {
+    margin: 0 7vh 0 7vh;
+  }
+  .movie-review{
+    color:#E43E54;
+    text-align: left;
   }
 }
