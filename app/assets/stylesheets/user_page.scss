@@ -44,11 +44,15 @@
   .col-8:hover{
     transform: scale(1.1);
   }
-  .col {
-    margin: 0 7vh 0 7vh;
-  }
+
   .movie-review{
     color:#E43E54;
     text-align: left;
+  }
+  .user-name {
+    text-align: left;
+    float: right;
+    margin-top: -20%;
+    margin-right: -5%;
   }
 }
