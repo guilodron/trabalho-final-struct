@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @watched_movies = @user.movies
+    @reviews = @user.reviews
   end
 
   def new

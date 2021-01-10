@@ -1,1 +1,42 @@
-<h1>Oi, eu sou a show</h1>
+<section class="user">
+  <div class="cotainer">
+    <div class="row align-items-start">
+      <!--vou dividir a pagina em 3 colunas-->
+      <div class="col" id="first collum">
+        <div id="profile-picture">
+          <% if @user.photo.attached?%>
+            <%= image_tag(@user.photo, id: "profile-picture", class:"rounded-circle") %>
+          <%else %>
+            <%= image_tag('blank-profile-picture.png', id: 'profile-picture', class: '') %>
+          <% end %>
+        </div>
+        <div id= "big-label"><b><%= @user.user_name%></b></div>
+        <p class="text"><b class="text-label"> Email:</b> <%= @user.email %> </p>
+        <p class="text"> <b class ="text-label">Gêneros Favoritos:</b> <%= @user.favorite_genres %>.</p>
+        <p class="text" style="text-align:justify"><b class="text-label">Sobre mim:</b> <%= @user.info %>.</p>
+        <p style="text-align: right"><b><%=link_to 'editar', edit_user_path, id: "button"%></b></p>
+      </div>
+      <div class="col" id="second collum">
+        <p id="big-label"> <b>Filmes Assisitidos</b></p>
+        <div class="row">
+          <% @watched_movies.each do |filme| %>
+          <div class="col-8">
+            <b><%=filme.name %></b>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col" id='third collum'>
+        <p id="big-label"><b>Suas Reviews</b></p>
+        <div class="row">
+          <% @reviews.each do |review| %>
+          <div class="col-8">
+            <b style="color:#E43E54"><%=review.movie.name%></b>
+            <p class= style="text-align:justify"><%= review.comment %></p>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
