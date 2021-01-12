@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   root 'application#homepage'
 
   scope 'users' do
@@ -10,5 +11,8 @@ Rails.application.routes.draw do
     patch 'editar/:id', to: 'users#update'
 
   end
+
+
+  #root 'landpage#index'
 
 end
