@@ -4,13 +4,24 @@
     <title>FinalProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
+    <header>
+      <%= link_to root_path, :class => 'link' do %>
+        <img class="icon" src="/assets/icon.svg" alt="icon" />
+      <% end %>
+      <form>
+        <input placeholder="Pesquisar um filme" />
+      </form>
+      <%= link_to root_path, :class => 'login' do %>
+        <i class="fa fa-user"></i>
+        <span>Login</span>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>
