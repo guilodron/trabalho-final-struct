@@ -2,7 +2,7 @@
   <div class="cotainer">
     <div class="row align-items-start">
       <!--vou dividir a pagina em 3 colunas-->
-      <div class="col" id="first collum">
+      <div class="col" id="first_collum">
         <div id="profile-picture">
           <% if @user.photo.attached?%>
             <%= image_tag(@user.photo, id: "profile-picture", class:"rounded-circle") %>
@@ -19,7 +19,7 @@
           <p class="button-add-movie"><%= link_to 'Adicionar Filme ', root_path, id:"add-movie" %></p>
         <% end %>
       </div>
-      <div class="col" id="second collum">
+      <div class="col" id="second_collum">
         <p id="big-label"> <b>Filmes Assisitidos</b></p>
         <div class="row">
           <% count = 0 %>
@@ -36,7 +36,7 @@
           <% end %>
         </div>
       </div>
-      <div class="col" id='third collum'>
+      <div class="col" id='third_collum'>
         <p id="big-label"><b>Suas Reviews</b></p>
         <div class="row">
           <% count2 = 0 %>
@@ -44,6 +44,8 @@
             <% if count2 < 5 %>
               <div class="col-8">
                 <b class="movie-review" ><%=review.movie.name%></b>
+                <b id="estrela"> &#9733; </b>
+                <b style="color: #FBC773" ><%= review.score %></b>
                 <p style="text-align:justify"><%= review.comment %></p>
               </div>
               <% count2 += 1 %>
