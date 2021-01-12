@@ -11,10 +11,13 @@
           <% end %>
         </div>
         <p id= "big-label" class="user-name"><b><%= @user.user_name %></b></p>
-        <p class="text"><b class="text-label"> Email:</b> <%= @user.email %> </p>
+        <p class="text" style="margin-top:5vh"><b class="text-label"> Email:</b> <%= @user.email %> </p>
         <p class="text"> <b class ="text-label">Gêneros Favoritos:</b> <%= @user.favorite_genres %>.</p>
         <p class="text" style="text-align:justify"><b class="text-label">Sobre mim:</b> <%= @user.info %>.</p>
         <p style="text-align: right"><b><%=link_to 'editar', edit_user_path, id: "button"%></b></p>
+        <% if @user.is_admin %>
+          <p class="button-add-movie"><%= link_to 'Adicionar Filme ', root_path, id:"add-movie" %></p>
+        <% end %>
       </div>
       <div class="col" id="second collum">
         <p id="big-label"> <b>Filmes Assisitidos</b></p>

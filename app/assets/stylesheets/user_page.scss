@@ -33,6 +33,9 @@
   #button:hover {
     color: #515151;
   }
+  .row {
+    justify-content: center;
+  }
   .col-8 {
     padding: 1vw;
     margin: 0 0 1vh 0;
@@ -48,10 +51,33 @@
     color:#E43E54;
     text-align: left;
   }
+
   .user-name {
     text-align: left;
     float: right;
     margin-top: -20%;
+  }
 
+  .button-add-movie {
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 2vh;
+    border: 1px solid royalblue;
+    border-radius: 10px;
+    background-color: royalblue;
+    transition: 0.2s;
+    display:inline-block;;
+    float: right;
+
+  }
+
+  .button-add-movie:hover{
+    filter: brightness(1.3);
+    transform: scale(1.1);
+  }
+
+  #add-movie {
+    text-decoration: none;
+    color:white;
   }
 }
