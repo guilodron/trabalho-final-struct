@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'landpage#index'
 
+  scope 'sessions' do
+    get 'login', to: 'sessions#new', as: :login
+    post 'login', to: 'sessions#create'
+    delete 'logout', to: 'sessions#destroy', as: :logout
+  end
+
   scope 'movies' do
     get '/index', to: 'movies#index', as: :index_movies
     get '/new', to: 'movies#new', as: :new_movie
