@@ -27,7 +27,11 @@ Rails.application.routes.draw do
   end
 
 
-  #root 'landpage#index'
+  scope 'reviews' do
+    post '/nova/:movie_id', to: 'reviews#create', as: 'create_review'
+    patch '/editar/:id', to: 'reviews#update', as: 'update_review'
+    delete 'deletar/:id', to: 'reviews#destroy', as: 'destroy_review'
+  end
 
 
 end

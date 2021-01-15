@@ -1,0 +1,18 @@
+<%= form_with model: review_instance, url: form_submit_url, method: form_submit_method do |form|%>
+  <div class="form-group">
+    <%= form.text_field :comment, placeholder: 'Faça seu comentário', class:'form-control' %>
+    <%= form.number_field :score, placeholder: 'Nota', class:'form-control' %>
+    <%= form.submit 'Finalizar', class:"btn btn-primary" %>
+  </div>
+
+
+<% end %>
+<%#OS EXEMPLOS A SEGUIR DEVEM SER COLOCADOS NAS SHOW DO FILME PARA QUE O USUÁRIO POSSO FAZER/EDITAR A REVIEW%>
+
+  <%#exemplo para editar uma review %>
+ <%# my_review = @watched_movies.last.reviews.first %>
+<%#= render 'reviews/review_form', review_instance: my_review, form_submit_url: update_review_path(my_review), form_submit_method: :patch %>
+
+  <%# exemplo para criar uma review %>
+<%#= render 'reviews/review_form', review_instance: Review.new, form_submit_url: create_review_path(@movie.id), form_submit_method: post %>
+
