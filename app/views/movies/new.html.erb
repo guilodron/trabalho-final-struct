@@ -1,0 +1,61 @@
+<div class="new-movie-container">
+    <div class="new-movie-form-container">
+        <h1>ADICIONAR NOVO FILME</h1>
+        <%=form_with model:@movie, url: :new_movie, method: :post do |form| %>
+            <div class="form-input">
+                <i class="fa fa-camera-retro"></i>
+                <%=form.text_field :name, placeholder: "Nome"%>
+            </div>
+            <div class="form-input">
+                <i class="fa fa-film"></i>
+                <%=form.text_field :director, placeholder: "Diretor"%>
+            </div>
+            <div class="form-label">
+                <i class="fa fa-calendar"></i>
+                <span>Lançamento</span>
+            </div>
+            <%=form.date_field :release_date, placeholder: "Lançamento", style: "margin-bottom: 10px"%>
+            <div class="form-label">
+                <i class="fa fa-filter"></i>
+                <span>Gênero</span>
+            </div>
+            <%=form.select :genres,["Drama", "Comédia", "Terror", "Animação", "Ação", "Sobrenatural", "Psicológico", "Fantasia"], style: "margin-bottom: 10px"  %>
+            <div class="form-label">
+                <i class="fa fa-info"></i>
+                <span>Descrição</span>
+            </div>
+            <%=form.text_area :description, placeholder: "Sobre o filme", style: "margin-bottom: 10px", rows: 5%>
+             <div class="form-input">
+                <i class="fa fa-film"></i>
+                <%=form.text_field :trailer, placeholder: "Trailer(tag)"%>
+            </div>
+            <div class="form-label">
+                <i class="fa fa-info"></i>
+                <span>Foto</span>
+            </div>
+            <%=form.file_field :photo %>
+
+            <%=form.submit "ADICIONAR" %>
+        <% end %>
+
+    </div>
+    <div class="new-movie-image">
+    </div>
+</div>
+
+
+<% if false %>
+<div class="container">
+<%=form_with model:@movie, url: :new_movie, method: :post do |form| %>
+    <div class="form-group">
+      <%=form.label :nome %>
+      <%=form.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%=form.label :diretor %>
+      <%=form.text_field :director, class: 'form-control', placeholder: "ave mari"%>
+    </div>
+  <%=form.submit "Cadastrar" %>
+<% end %>
+</div>
+<%end%>

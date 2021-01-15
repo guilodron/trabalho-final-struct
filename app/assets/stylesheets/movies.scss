@@ -1,3 +1,90 @@
 // Place all the styles related to the Movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new-movie-container {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: row;
+
+    .new-movie-form-container{
+        width: 100%;
+        max-width: 600px;
+        padding: 140px 10px;
+
+        h1 {
+            font-family: 'Rubik Mono One', sans-serif;
+            font-size: 32px;
+            color: #E43E54;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            input {
+                border: none;
+            }
+            input:focus{
+                outline: none;
+                border: none;
+            }
+            input[type=submit] {
+                padding: 10px;
+                font-size: 20px;
+                font-weight: bold;
+                color: white;
+                background-color: #E43E54;
+                margin-top: 10px;
+                border-radius: 5px;
+            }
+            textarea {
+                border: solid #E43E54 1px;
+                border-radius: 5px;
+            }
+
+            select {
+                font-size: 18px;
+                background: transparent;
+                outline: none;
+                border: none;
+                border-bottom: 1px #E43E54 solid;
+                border-radius: 5px;
+                padding: 5px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .form-label  {
+            display: flex;
+            align-items: center;
+            color: #E43E54;
+            font-size: 21px;
+            i {
+                margin-right: 8px;
+            }
+        }
+
+        .form-input {
+            border-bottom: #E43E54 solid 1px;
+            display: flex;
+            align-items: center;
+            height: 40px;
+            margin-bottom: 10px;
+            i{
+                font-size: 21px;
+                color: #E43E54;
+                margin-right: 8px;
+            }           
+        }
+    }
+
+    .new-movie-image {
+        flex: 1;
+        background: url('new_movie_bg.svg') no-repeat center;
+    }
+}
