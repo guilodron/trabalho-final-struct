@@ -1,5 +1,14 @@
-<h1>Aqui ficará a homepage</h1>
+<h1>Aqui ficará a home zadad</h1>
 <%=link_to 'cadastrar', new_user_path %>
+
+<%@movies.each do |m| %>
+  <p><%= m.name %></p>
+  <% if m.photo.attached?%>
+      <%= image_tag(m.photo, id: "profile-picture", class:"rounded-circle") %>
+  <%else %>
+    <%= image_tag('blank-profile-picture.png', id: 'profile-picture', class: 'rounded-circle') %>
+  <% end %>
+<% end %>
 
 <%@todos.each do |f| %>
   <p><%= link_to 'editar info ', edit_user_path(f) %></p>
