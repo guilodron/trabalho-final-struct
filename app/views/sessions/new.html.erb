@@ -1,23 +1,64 @@
-<!--Formulario para o login-->
+<!--- Formulário para o login --->
+<div class="center">
+  <h2>Já possui<p>uma conta?</p></h2>
+  <form method="post">
+    <div class="txt_field_login">
+        <i class="fa fa-user"></i>
+        <input type="text" required>
+        <label>Email</label>
+    </div>
+    <div class="txt_field_login">
+      <i class="fa fa-lock"></i>
+      <input type="password"required>
+      <label>Senha</label>
+    </div>
+    <input type="submit" value="Login">
+  </form>
+</div>
 
-<div class="container">
-<h2>Logar</h2>
+<!--- Tags para a linha no centro --->
+</div>
+<div class="box">
+</div>
+<div class="box linha-vertical">
+</div>
 
-<%= form_with url: :login, method: :post do |form| %>
-
-  <div class="form-group">
-    <%= form.label :email %>
-    <%= form.email_field :email, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :password %>
-    <%= form.password_field :password, class: 'form-control' %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Login"%>
-  </div>
-
-<% end %>
+<!--- Formulário para o cadastro --->
+<div class="center2">
+  <h2>Cadastrar</h2>
+  <form method="post">
+    <div class="txt_field_cadastro">
+      <i class="fa fa-user"></i>
+      <input type="text" required>
+      <label>Nome</label>
+    </div>
+    <div class="txt_field_cadastro">
+      <i style="margin-left: auto;" class="fa fa-envelope"></i>
+      <input type="text" required>
+      <label>Email</label>
+    </div>
+    <div class="txt_field_cadastro">
+      <i class="fa fa-lock"></i>
+      <input type="password"required>
+      <label>Senha</label>
+    </div>
+    <div class="txt_field_cadastro">
+      <i class="fa fa-lock"></i>
+      <input type="password" required>
+      <label>Confirme sua senha</label>
+    </div>
+    <div>
+      <p style="font-family: 'Rubik Mono One', sans-serif; color: #E43E54; font-size: smaller; margin-top: 6%;">Gêneros favoritos</p>
+      <input class="check" type="checkbox"> Comédia
+      <input class="check" type="checkbox"> Drama<p>
+      <input class="check" type="checkbox"> Terror
+      <input class="check" type="checkbox"> Ação
+    </div>
+    <div class="question">
+      <i class="fa fa-question"></i>
+      <p style="font-family: 'Rubik Mono One', sans-serif; color: #E43E54; font-size: smaller; margin-left: 20px;">Sobre mim</p>
+      <textarea class="big-text" rows="5"></textarea>
+    </div>
+    <input type="submit" value="Cadastrar">
+  </form>
 </div>
