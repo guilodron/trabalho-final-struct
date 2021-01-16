@@ -1,15 +1,73 @@
-<h1>Aqui ficará a home zadad</h1>
-<%=link_to 'cadastrar', new_user_path %>
 
-<%@movies.each do |m| %>
-  <p><%= m.name %></p>
-  <% if m.photo.attached?%>
-      <%= image_tag(m.photo, id: "profile-picture", class:"rounded-circle") %>
-  <%else %>
-    <%= image_tag('blank-profile-picture.png', id: 'profile-picture', class: 'rounded-circle') %>
+<section class="latest-movies">
+  <h1>Últimos adicionados</h1>
+  <div class="movie-banners">
+    <div class="latest-first">
+      <% if @latest_first.photo.attached?%>
+        <%= image_tag(@latest_first.photo, class: "first-banner") %>
+      <%else %>
+        <%= image_tag('blank-profile-picture.png', class: "first-banner") %>
+      <% end %>
+      <div class="dark-transparent"></div>
+      <div class="name-rating-first">
+        <span class="name"><%= @latest_first.name %></span>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <span><%= @latest_first.final_score %></span>
+        </div>
+      </div>
+    </div>
+    <div class="latest-grid">
+      <% @latest.each do |m|%>
+        <div class="movie-cell">
+          <% if m.photo.attached?%>
+            <%= image_tag(m.photo, class: "movie-cell-banner") %>
+          <%else %>
+            <%= image_tag('blank-profile-picture.png', class: "movie-cell-banner") %>
+          <% end %>
+          <div class="name-rating">
+            <span><%= m.name %></span>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <span><%= m.final_score %></span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  
+
+</section>
+
+<section class="best-rated-movies">
+  <h1>Melhores filmes</h1>
+
+  <div class="rated-container">
+    <% @best_rated.each do |m|%>
+      <div class="rated-movie-cell">
+        <% if m.photo.attached?%>
+          <%= image_tag(m.photo, class: "movie-cell-banner") %>
+        <%else %>
+           <%= image_tag('blank-profile-picture.png', class: "movie-cell-banner") %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to root_path, :class => 'all-movies' do %>
+    <i class="fa fa-list"></i>
+    <span>Ver todos os filmes</span>
   <% end %>
-<% end %>
 
+</section>
+
+
+
+
+
+<%=link_to 'cadastrar', new_user_path %>
 <%@todos.each do |f| %>
   <p><%= link_to 'editar info ', edit_user_path(f) %></p>
   <p><%= link_to 'mostrar info', show_user_path(f) %></p>

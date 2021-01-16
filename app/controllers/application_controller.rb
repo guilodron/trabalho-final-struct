@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   def homepage
-    @movies = Movie.order('created_at DESC').limit(5)
-    @best_rated = Movie.order('final_score DESC').limit(5)
+    @latest = Movie.all.limit(5).order('created_at DESC').to_a
+    @latest_first = @latest.shift
+    @best_rated = Movie.all.limit(7).order('final_score DESC')
     @todos = User.all
   end
 end
