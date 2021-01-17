@@ -1,0 +1,17 @@
+<!--- Formulário para o login --->
+<div class="center-login">
+    <h2>Já possui<p>uma conta?</p></h2>
+    <%=form_with model:@user, url: :new_user, method: :post do |form| %>
+        <div class="txt_field_login">
+            <i class="fa fa-user"></i>
+            <input type="text" required>
+            <label>Email</label>
+        </div>
+        <div class="txt_field_login">
+            <i class="fa fa-lock"></i>
+            <input type="password"required>
+            <label>Senha</label>
+        </div>
+        <input type="submit" value="Login">
+    <% end %>
+</div>
