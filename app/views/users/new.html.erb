@@ -1,14 +1,75 @@
-<h2 style="text-align: center; margin-top: 10%;"><strong>Cadastro</strong></h2>
+<!--- Formulário para o cadastro --->
 <div class="container">
-<%=form_with model:@user, url: :new_user, method: :post do |form| %>
-    <div class="form-group">
-      <%=form.label :email %>
-      <%=form.email_field :email, class: 'form-control' %>
+  <div class="row align-items-center login-signup-container">
+    <div class="col justify-content-center">
+      <!--- Formulário para o login --->
+      <div class="m-auto">
+        <h2 class="center-login">Já possui<p>uma conta?</p></h2>
+        <%=form_with url: :login, method: :post do |form| %>
+          <div class="txt_field_login">
+              <i class="fa fa-user"></i>
+              <%= form.email_field :email, required: true %>
+              <%= form.label :email, "Email" %>
+          </div>
+          <div class="txt_field_login">
+              <i class="fa fa-lock"></i>
+              <%= form.password_field :password, required: true %>
+              <%= form.label :password, "Senha" %>
+          </div>
+          <%= form.submit "Login" %>
+        <% end %>
+      </div>
     </div>
-    <div class="form-group">
-      <%=form.label :password %>
-      <%=form.password_field :password, class: 'form-control'%>
+
+    <div class="col justify-content-center">
+      <div class="box"></div>
+      <div class="box linha-vertical"></div>
     </div>
-  <%=form.submit "Cadastrar" %>
-<% end %>
+
+    <div class="col justify-content-center">
+      <div class="m-auto">
+        <h2 class="center-cadastro">Cadastrar</h2>
+        <%=form_with model:@user, url: :new_user, method: :post do |form| %>
+          <div class="txt_field_cadastro">
+            <i class="fa fa-user"></i>
+            <%= form.text_field :user_name, required: true %>
+            <%= form.label :user_name, "Nome" %>
+          </div>
+          <div class="txt_field_cadastro">
+            <i style="margin-left: auto;" class="fa fa-envelope"></i>
+            <%= form.email_field :email, required: true %>
+            <%= form.label :email, "Email" %>
+          </div>
+          <div class="txt_field_cadastro">
+            <i class="fa fa-lock"></i>
+            <%= form.password_field :password, required: true %>
+            <%= form.label :password, "Senha" %>
+          </div>
+          <div class="txt_field_cadastro">
+            <i class="fa fa-lock"></i>
+            <%= form.password_field :password_confirmation, required: true %>
+            <%= form.label :password_confirmation, "Confirme sua senha" %>
+          </div>
+          <div>
+              <p id="check">Gêneros favoritos</p>
+              <% movie_genres.each_with_index do |genre, index| %>
+                <% even_index = index % 2 == 0 %>
+                <%= "<div class='row'>".html_safe if even_index %>
+                  <div class="col">
+                    <%= form.check_box genre.to_sym %>
+                    <%= form.label genre.to_sym, genre %><br>
+                  </div>
+                <%= "</div>".html_safe if !even_index %>
+              <% end %>
+          </div>
+          <div class="question">
+            <i class="fa fa-question"></i>
+            <p>Sobre mim</p>
+            <%= form.text_area :info, required: true, id: "big-text", rows: 5 %>
+          </div>
+          <%= form.submit "Cadastrar" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
