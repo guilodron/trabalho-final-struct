@@ -1,21 +1,7 @@
-.center-login {
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-
-}
-
-.center-login h2, .center-cadastro h2 {
-    color: #E43E54;
+.center-login, .center-cadastro {
+    font-family: 'Rubik Mono One', sans-serif; 
+    color: #E43E54; 
     text-align: center;
-    font-family: 'Rubik Mono One', sans-serif;
-}
-
-.center-login form, .center-cadastro form  {
-    padding: 0 40px;
-    box-sizing: border-box;
 }
 
 form .txt_field_login, form .txt_field_cadastro {
@@ -26,7 +12,7 @@ form .txt_field_login, form .txt_field_cadastro {
     i {
         font-size: 20px;
         margin-left: 5px;
-        margin-top: 10px;
+        margin-top: 15px;
         color: #E43E54;
     }
 }
@@ -39,12 +25,15 @@ form .txt_field_login, form .txt_field_cadastro {
     border: none;
     background: none;
     outline: none;
+    // :-webkit-autofill {
+    //     -webkit-background-clip: ;;
+    // }
 }
 
 .txt_field_login label, .txt_field_cadastro label {
     position: absolute;
-    top: 50%;
-    left: 25px;
+    top: 26px;
+    left: 28px;
     color: #adadad;
     transform: translateY(-50%);
     font-size: 16px;
@@ -54,7 +43,7 @@ form .txt_field_login, form .txt_field_cadastro {
 
 .txt_field_login input:focus ~ label,
 .txt_field_login input:valid ~ label {
-    top: -5px;
+    top: 1px;
     color: #E43E54;
 }
 
@@ -78,23 +67,14 @@ input[type="submit"] {
     outline: none;
 }
 
-.center-cadastro {
-    position: absolute;
-    top: 53%;
-    right: 40px;
-    transform: translate(-50%, -50%);
-    width: 400px;
-}
-
 form .txt_field_cadastro {
     display: flex;
-    position: relative;
     border-bottom: 2px solid #E43E54;
     margin: 15px 0;
     i {
         font-size: 20px;
         margin-left: 5px;
-        margin-top: 10px;
+        margin-top: 15px;
         color: #E43E54;
     }
 }
@@ -105,14 +85,11 @@ form .txt_field_cadastro {
     color: #E43E54;
 }
 
-.check {
-    cursor: pointer;
-    p {
+#check {
         font-family: 'Rubik Mono One', sans-serif; 
         color: #E43E54; 
         font-size: smaller; 
         margin-top: 6%;
-    }
 }
 
 form .question {
@@ -134,9 +111,13 @@ form .question {
     #big-text {
         border: 2px solid #E43E54;
         border-radius: 5px;
-        width: 38vh;
-        height: 12vh;
+        width: 40.5vh;
+        height: 11vh;
     }
+}
+
+.login-signup-container {
+    height: 90vh;
 }
 
 /*Para a linha posicionada no centro*/
@@ -148,7 +129,7 @@ form .question {
 }
    
 .linha-vertical {
-    margin-top: 10%;
+    margin-top: -5vh;
     color: #E43E54;
     border-left: 3px solid;
     box-sizing: border-box;
