@@ -55,5 +55,10 @@ class MoviesController < ApplicationController
     def movie_params
       params.require(:movie).permit(:name, :release_date, :genres, :description, :director, :trailers)
     end
+
+    def edit_review
+      @movie = Movie.find(params[:id])
+      @user = User.find_by(User.last)
+      @review = Review.find_by(user_id: @user.id, movie_id: @movie.id)
+    end
   end
-  

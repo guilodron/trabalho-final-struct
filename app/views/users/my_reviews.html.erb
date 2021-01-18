@@ -1,0 +1,28 @@
+<section class="review">
+  <h5><b>Minhas Reviews</b></h5>
+  <div class="review-container">
+    <% @reviews.reverse.each do |r| %>
+      <div class="review-box">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <% if r.user.photo.attached?%>
+            <%= image_tag(r.user.photo, id: "profile-picture", class:"rounded-circle") %>
+          <%else %>
+            <%= image_tag('blank-profile-picture.png', id: 'profile-picture', class: 'rounded-circle') %>
+          <% end %>
+          <b><%= r.user.user_name %></b>
+        </div>
+        <b style="color:#E43E54"><%= r.movie.name %></b>
+        <div class="rate">
+          <i class="fa fa-star"></i>
+          <%= r.score %>
+        </div>
+      </div>
+        <div class="comment">
+          <%= r.comment %>
+        </div>
+        <p style="text-align:right"><%=link_to 'Filme-info' , show_movie_path, id: "button"%></p>
+      </div>
+    <% end %>
+  </div>
+</section>

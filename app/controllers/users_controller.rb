@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  #before_action :require_login, only: [:show, :edit]
+
   def show
     @user = User.find(params[:id])
     @watched_movies = @user.movies
@@ -30,6 +32,11 @@ class UsersController < ApplicationController
     rescue StandardError => e
       render 'edit'
     end
+  end
+
+  def my_reviews
+    @user = User.find(params[:id])
+    @reviews = @user.reviews
   end
 
   private

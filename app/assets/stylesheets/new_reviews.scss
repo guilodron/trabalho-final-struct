@@ -1,0 +1,92 @@
+.new-review {
+  //background-color: #E5E5E5;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+
+
+  .new-review-container {
+    margin: 10vh 30vh 0 30vh;
+    min-height: 100vh;
+  }
+
+  .review-movie-info {
+    display: flex;
+
+    .written-movie-info {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .movie-picture {
+      height: 40vh;
+      min-width: 15vw;
+      margin: 0 2vh 0 2vh;
+    }
+
+    .movie-name {
+      color: black;
+      font-size: 5vh;
+    }
+
+    .score {
+      color: #FBC773;
+      font-size: 5vh;
+    }
+
+    .movie-description {
+      text-align: justify;
+    }
+
+  }
+
+  .new-review-form {
+    margin-top: 10vh;
+    display: flex;
+
+    .review-form {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .score-form {
+      display: flex;
+      flex-direction: row;
+      color: #FBC773;
+      font-size: 3vh;
+
+      .fa-star {
+        margin-right: 2vh;
+      }
+    }
+
+    .number-form {
+      border: 1px solid #E43E54;
+      border-radius: 5px;
+    }
+
+    .comment-form {
+      border: 1px solid #E43E54;
+      border-radius: 5px;
+      margin-top: 2vh;
+    }
+
+    .submit-button {
+      border: 1px solid royalblue;
+      border-radius: 5px;
+      background-color: royalblue;
+      color: whitesmoke;
+      margin-top: 10px;
+    }
+
+    .submit-button:hover {
+      filter: brightness(1.3);
+    }
+
+
+  }
+
+}

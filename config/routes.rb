@@ -14,6 +14,13 @@ Rails.application.routes.draw do
     get '/editar/:id', to: 'movies#edit', as: :edit_movie
     get '/mostrar/:id', to: 'movies#show', as: :show_movie
     delete '/deletar/:id', to: 'movies#destroy', as: :destroy_movie
+
+    get ':id/reviews/new', to: 'reviews#new', as: 'new_review'
+    post ':id/reviews/create', to: 'reviews#create'
+    get ':id/reviews/edit/:review_id', to: 'reviews#edit', as: 'edit_review'
+    patch ':id/reviews/edit/:review_id', to: 'reviews#update'
+
+
   end
 
   root 'application#homepage'
@@ -24,14 +31,9 @@ Rails.application.routes.draw do
     post '/cadastro', to: 'users#create'
     get 'editar/:id', to: 'users#edit', as: 'edit_user'
     patch 'editar/:id', to: 'users#update'
+    get ':id/reviews', to: 'users#my_reviews', as: 'reviews_user'
   end
 
-
-  scope 'reviews' do
-    post '/nova/:movie_id', to: 'reviews#create', as: 'create_review'
-    patch '/editar/:id', to: 'reviews#update', as: 'update_review'
-    delete 'deletar/:id', to: 'reviews#destroy', as: 'destroy_review'
-  end
 
 
 end

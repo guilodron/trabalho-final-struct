@@ -23,24 +23,22 @@
         <p id="big-label"> <b>Filmes Assisitidos</b></p>
         <div class="row">
           <% count = 0 %>
-          <% @watched_movies.each do |filme| %>
+          <% @watched_movies.reverse.each do |filme| %>
           <%if count < 5 %>
             <div class="col-8">
               <b><%=filme.name %></b>
             </div>
             <%count += 1 %>
-          <% else %>
-              <!--por enquanto ta edit user_path mas depois vou ajustar pra colocar o certo-->
-              <p style="text-align: right"><b><%=link_to 'Todos os seus filmes', edit_user_path, id: "button"%></b></p>
           <% end %>
           <% end %>
+          <p style="text-align: right"><b><%=link_to 'Todos os seus filmes', edit_user_path, id: "button"%></b></p>
         </div>
       </div>
       <div class="col" id='third_collum'>
         <p id="big-label"><b>Suas Reviews</b></p>
         <div class="row">
           <% count2 = 0 %>
-          <% @reviews.each do |review| %>
+          <% @reviews.reverse.each do |review| %>
             <% if count2 < 5 %>
               <div class="col-8">
                 <b class="movie-review" ><%=review.movie.name%></b>
@@ -49,11 +47,9 @@
                 <p style="text-align:justify"><%= review.comment %></p>
               </div>
               <% count2 += 1 %>
-            <% else %>
-              <!--por enquanto ta edit_user_path mas depois vou ajustar pra colocar o certo-->
-              <p style="text-align: right"><b><%=link_to 'Todas as suas reviews', edit_user_path, id: "button"%></b></p>
             <% end %>
           <% end %>
+          <p style="text-align: right"><b><%=link_to 'Todas as suas reviews', reviews_user_path, id: "button"%></b></p>
         </div>
       </div>
     </div>
