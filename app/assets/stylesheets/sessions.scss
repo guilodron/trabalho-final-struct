@@ -41,6 +41,11 @@ input[type="submit"] {
     outline: none;
 }
 
+input[type="submit"]:hover {
+    border-color: #E43E54;
+    transition: .5s;
+}
+
 form .txt_field_cadastro {
     display: flex;
     border-bottom: 2px solid #E43E54;

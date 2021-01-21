@@ -51,14 +51,14 @@
               <p>Gêneros favoritos</p>
               <% movie_genres.each_with_index do |genre, index| %>
                 <% even_index = index % 2 == 0 %>
-                <label>
-                  <%= "<div class='row'>".html_safe if even_index %>
-                    <div class="col">
-                      <%= form.check_box genre.to_sym %>
-                      <%= form.label genre.to_sym, genre %><br>
-                    </div>
-                  <%= "</div>".html_safe if !even_index %>
-                </label>
+
+                <%= "<div class='row'>".html_safe if even_index %>
+                  <div class="col">
+                    <%= form.check_box genre.to_sym %>
+                    <%= form.label genre.to_sym, genre %><br>
+                  </div>
+                <%= "</div>".html_safe if !even_index %>
+
               <% end %>
             </div>
             <div class="question">
