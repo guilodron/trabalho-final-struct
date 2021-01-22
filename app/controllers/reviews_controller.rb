@@ -1,20 +1,20 @@
 class ReviewsController < ApplicationController
-  #before_action :require_login
-  before_action :which_movie
-  before_action :which_review, only: [:edit, :update]
+  before_action :require_login
+  before_action :which_movie, only: [:new, :create ,:edit, :update]
+  before_action :which_review, only: [:edit, :update, :destroy]
 
   def new
     @review = Review.new
   end
 
   def create
-    @review = Review.new(review_params.merge({user_id: current_user.id, movie_id: params[:movie_id]}))
+    @review = Review.new(review_params.merge({user_id: current_user.id, movie_id: @movie.id}))
     begin
       @review.save!
-      redirect_to show_movie_path(params[@review.movie.id])
-    rescue StandardError => e
+      redirect_to show_movie_path(@movie.id)
+      rescue StandardError => e
       flash[:alert] = e
-      render 'new'
+      redirect_to root_path
     end
   end
 
@@ -31,14 +31,15 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:id])
     begin
       @review.destroy!
       flash[:alert] = 'Removido!'
+      redirect_to show_movie_path(@review.movie.id)
     rescue StandardError => e
       flash[:alert] = e
+      redirect_to edit_review_path(@movie, @review)
     end
-    redirect_to show_movie_path(@review.movie.id)
+
   end
 
   private
@@ -47,10 +48,10 @@ class ReviewsController < ApplicationController
   end
 
   def which_movie
-    @movie = Movie.find(params[:review_id])
+    @movie = Movie.find(params[:id])
   end
 
   def which_review
-    @review = Review.find_by(user_id: User.last.id, movie_id: Movie.first.id)
+    @review = Review.find_by(params[:review_id])
   end
 end

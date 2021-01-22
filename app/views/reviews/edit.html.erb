@@ -16,22 +16,24 @@
       </div>
     </div>
     <div class="new-review-form">
-      <%= form_with model:@review, url: :new_review, method: :post do |form| %>
+      <%= form_with model:@review, url: :edit_review, method: :patch do |form| %>
         <div class="review-form">
           <div class="score-form">
             <i class="fa fa-star"></i>
-            <p style="margin-right:2vh">Nota</p>
+            <p style="margin-right:2vh; font-weight: bold">Nota</p>
           </div>
           <%=form.number_field( :score, options = {min:0, max:5}) %>
         </div>
         <div class ='review-form'>
           <%= form.text_area :comment, placeholder: 'Comentário', class:"comment-form", size: '80x7' %>
         </div>
-        <div class = "review-form">
-          <%= form.submit class:'submit-button' %>
+        <div class ="review-form">
+          <%= form.submit class:'submit-button', data: {confirm: "Deseja realizar essas alterações?"} %>
         </div>
       <% end %>
-
+    </div>
+    <div class="destroy-review-form">
+      <%= button_to "Excluir", destroy_review_path(@review.id), method: :delete, data: {confirm: "Apagar Review?"},  class:"destroy" %>
     </div>
   </div>
 </section>

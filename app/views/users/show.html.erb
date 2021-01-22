@@ -39,7 +39,7 @@
         <div class="row">
           <% count2 = 0 %>
           <% @reviews.reverse.each do |review| %>
-            <% if count2 < 5 %>
+            <% if count2 < 3 %>
               <div class="col-8">
                 <b class="movie-review" ><%=review.movie.name%></b>
                 <b id="estrela"> &#9733; </b>

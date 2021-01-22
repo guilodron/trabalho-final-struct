@@ -21,7 +21,7 @@
         <div class="comment">
           <%= r.comment %>
         </div>
-        <p style="text-align:right"><%=link_to 'Filme-info' , show_movie_path, id: "button"%></p>
+        <p style="text-align:right"><%=link_to 'Filme-info' , show_movie_path(r.movie.id), id: "button"%></p>
       </div>
     <% end %>
   </div>

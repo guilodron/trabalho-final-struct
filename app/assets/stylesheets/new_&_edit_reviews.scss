@@ -23,7 +23,7 @@
 
     .movie-picture {
       height: 40vh;
-      min-width: 15vw;
+      min-width: 18vw;
       margin: 0 2vh 0 2vh;
     }
 
@@ -87,6 +87,22 @@
     }
 
 
+  }
+
+  .destroy-review-form {
+
+    .destroy {
+      color: whitesmoke;
+      background-color: #B00100 ;
+      border-radius: 5px;
+      height: 5vh;
+      margin-top: 10px;
+
+    }
+
+    .destroy:hover {
+      filter: brightness(1.3);
+  }
   }
 
 }
