@@ -19,10 +19,10 @@ class MoviesController < ApplicationController
       begin
         movie.save!
         flash[:alert] = 'Filme adicionado!'
-        redirect_to index_movies_path
+        redirect_to root
       rescue StandardError => e
         flash[:alert] = e
-        redirect_to new_movie_path
+        redirect_to root_path
       end
     end
   
@@ -56,7 +56,7 @@ class MoviesController < ApplicationController
     private
   
     def movie_params
-      params.require(:movie).permit(:name, :release_date, :genres, :description, :director, :trailers)
+      params.require(:movie).permit(:name, :release_date, :genres, :description, :director, :trailer, :photo)
     end
 
   end
