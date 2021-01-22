@@ -1,8 +1,10 @@
 class MoviesController < ApplicationController
-  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
-
-    def index
-      @movies = Movie.all
+    before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+    
+    def index 
+      print('oi')
+      print(params[:search])    
+      @pagy, @movies = pagy(Movie.filter(params[:search]), items: 18)
     end
   
     def show

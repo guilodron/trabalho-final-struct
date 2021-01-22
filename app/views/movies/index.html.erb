@@ -1,0 +1,26 @@
+<section class='all-movies-container'>
+    <h1>Todos os filmes</h1>
+    <div class='movies-filter'>
+        <i class='fa fa-filter'></i>
+        <span>Filtrar por:</span>
+        <%= form_for "", url: index_movies_path, role: "search", method: :get do |form| %>
+            <%=form.select :search,["Todos", "Drama", "Comédia", "Terror", "Animação", "Ação", "Sobrenatural", "Psicológico", "Fantasia"], {}, {:onchange => "this.form.submit()"} %>
+        <% end %>
+    </div>
+    <div class='all-movies'>
+        <% @movies.each do |movie|%>
+            <div class='all-movies-cell'>
+                <% if movie.photo.attached?%>
+                    <%= image_tag(movie.photo, class: "movie-banner") %>
+                <%else %>
+                    <%= image_tag('blank-profile-picture.png', class: "movie-banner") %>
+                <% end %>
+                <div class='movie-dark'>
+                    <span><%= movie.name %></span>
+                    <span><%= movie.final_score %></span>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <%== pagy_bootstrap_nav(@pagy) %>
+</section>
