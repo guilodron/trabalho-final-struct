@@ -1,0 +1,44 @@
+.edit-userpage .container {
+    margin-top: 7%;
+
+    .form-group label {
+        color: #E43E54; 
+        font-family: 'Rubik Mono One', sans-serif;
+        margin-top: 20px;
+    }
+
+    h2 {
+        overflow: hidden;
+        color: #E43E54; 
+        font-family: 'Rubik Mono One', sans-serif;
+    }
+
+    .form-control {
+        border: 1px solid;
+        border-color: #E43E54;
+    }
+
+    #genres {
+        font-size: smaller;
+    }
+
+    #fonte {
+        font-size: smaller;
+    }
+
+    #profile {
+        border: none;
+    }
+
+    #submit {
+        margin-top: 20px;
+    }
+}
+
+.imagem {
+    margin-top: 4.5%;
+    margin-right: -3%;
+    margin-left: 0%;
+    float: right;
+    width: 40%;
+}
