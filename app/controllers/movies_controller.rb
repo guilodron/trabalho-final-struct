@@ -1,6 +1,8 @@
 class MoviesController < ApplicationController
-    def index
-      @movies = Movie.all
+    def index 
+      print('oi')
+      print(params[:search])    
+      @pagy, @movies = pagy(Movie.filter(params[:search]), items: 18)   
     end
   
     def show
