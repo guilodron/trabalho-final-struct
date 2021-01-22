@@ -1,10 +1,13 @@
 class MoviesController < ApplicationController
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+
     def index
       @movies = Movie.all
     end
   
     def show
       @movie = Movie.find(params[:id])
+      @review = Review.find_by(user_id: current_user.id, movie_id: @movie.id)
     end
   
     def new
@@ -55,5 +58,5 @@ class MoviesController < ApplicationController
     def movie_params
       params.require(:movie).permit(:name, :release_date, :genres, :description, :director, :trailer, :photo)
     end
+
   end
-  

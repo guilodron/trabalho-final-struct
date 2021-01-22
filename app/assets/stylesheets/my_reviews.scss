@@ -1,0 +1,66 @@
+.review {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+
+  .rounded-circle {
+    height: 6vh;
+    width: 6vh;
+    margin-right: 1vh;
+  }
+
+  h5 {
+    margin-left: 4vh;
+    margin-top: 5vh;
+  }
+
+  .review-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 4vh 0 4vh;
+    flex-wrap: wrap;
+
+    .review-box {
+      margin: 1vh 2vh 1vh 2vh;
+      background-color: #F9F7F8;
+      padding: 1vw;
+      transition: 0.2s;
+      max-width: 45vw;
+      max-height: 40vh;
+    }
+
+    .review-box:hover {
+      transform: scale(1.05);
+    }
+  }
+
+    .review-header {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      margin-bottom: 5px;
+    }
+
+  .reviewer-info {
+    display: inline-block;
+    margin-right: 2vw;
+  }
+
+  .rate {
+    color: #FBC773;
+  }
+
+  #button {
+    text-decoration: none;
+    color: purple;
+    text-align: right;
+    transition: 1.5s;
+    margin-bottom: 0;
+  }
+
+  #button:hover {
+    color: #515151;
+  }
+}
