@@ -1,8 +1,8 @@
 <section class="new-review">
   <div class="new-review-container">
     <div class="review-movie-info">
-      <%if @movie.photos.attached? %>
-        <%= image_tag(@movie.photos.first, class:'movie-picture')%>
+      <%if @movie.photo.attached? %>
+        <%= image_tag(@movie.photo, class:'movie-picture')%>
       <%else %>
         <%= image_tag('blank-profile-picture.png', class:'movie-picture') %>
       <% end %>
