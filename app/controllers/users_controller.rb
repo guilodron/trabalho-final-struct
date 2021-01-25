@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @reviews = @user.reviews
   end
 
+  def all_movies
+    @pagy, @movies = pagy(Movie.all, items: 18)
+  end
+
   def new
     @user = User.new
   end
