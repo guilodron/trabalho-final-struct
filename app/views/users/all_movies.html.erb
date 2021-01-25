@@ -1,0 +1,20 @@
+<section class="all-movies-container">
+    <h2>Filmes assistidos</h2>
+    <div class="all-movies">
+        <% if current_user.movies != nil %>
+            <% current_user.movies.each do |movie| %>
+                <div class="all-movies-cell">
+                    <% if movie.photo.attached? %>
+                        <%= image_tag(movie.photo) %>
+                    <% else %>
+                        <%= image_tag("blank-profile-picture.png", class: "movie-banner") %>
+                    <% end %>
+                    <div class="movie-dark">
+                        <span><%= movie.name %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+    <%== pagy_bootstrap_nav(@pagy) %>
+</section>

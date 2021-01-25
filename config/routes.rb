@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     get 'editar/:id', to: 'users#edit', as: 'edit_user'
     patch 'editar/:id', to: 'users#update'
     get ':id/reviews', to: 'users#my_reviews', as: 'reviews_user'
+    get ':id/movies', to: 'users#all_movies', as: 'movies_user'
   end
 
 
