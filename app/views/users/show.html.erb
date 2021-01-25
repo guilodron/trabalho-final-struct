@@ -15,6 +15,7 @@
         <p class="text"> <b class ="text-label">Gêneros Favoritos:</b> <%= @user.favorite_genres %>.</p>
         <p class="text" style="text-align:justify"><b class="text-label">Sobre mim:</b> <%= @user.info %>.</p>
         <p style="text-align: right"><b><%=link_to 'editar', edit_user_path, id: "button"%></b></p>
+        <p style="text-align: right; color: #E43E54"><b><%=button_to 'Fazer logout', logout_path(current_user.id), method: :delete, data: {confirm: 'Deseja Fazer Logout?'}%></b></p>
         <% if @user.is_admin %>
           <p class="button-add-movie"><%= link_to 'Adicionar Filme ', new_movie_path, id:"add-movie" %></p>
         <% end %>

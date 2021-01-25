@@ -17,10 +17,17 @@
       <form>
         <input placeholder="Pesquisar um filme" />
       </form>
+      <% if not logged_in? %>
       <%= link_to new_user_path, :class => 'login' do %>
         <i class="fa fa-user"></i>
         <span>Login</span>
       <% end %>
+        <% else %>
+        <%= link_to show_user_path(current_user.id), :class => 'login' do %>
+          <i class="fa fa-user"></i>
+          <span><%= current_user.user_name %></span>
+      <% end %>
+        <% end  %>
     </header>
     <%= yield %>
   </body>
