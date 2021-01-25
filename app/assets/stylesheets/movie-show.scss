@@ -1,0 +1,108 @@
+.movie-show {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+
+
+  .movie-show-container {
+    margin: 10vh 30vh 0 30vh;
+    min-height: 100vh;
+  }
+
+  .movie-info {
+    display: flex;
+    margin-bottom: 8vh;
+
+  .written-movie-info {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+    .movie-picture {
+      height: 40vh;
+      width: 15vw;
+      min-width: 15vw;
+      margin: 2vh 3vw 0 2vh;
+    }
+    .movie-name {
+      color: black;
+      font-size: 5vh;
+    }
+
+    .movie-score {
+      color: #FBC773;
+      font-size: 5vh;
+
+      i {
+        font-size: 4vh;
+      }
+    }
+
+    .movie-description {
+      text-align: justify;
+      color: #515151;
+    }
+
+    .links-movies {
+      flex-direction: row;
+
+      .movie-link {
+        text-decoration: none;
+        color: #E43E54;
+        transition: 1.5s;
+      }
+
+      .movie-link:hover {
+        color: #515151;
+      }
+
+    }
+  }
+
+  .movies-last-reviews {
+    .movie-reviews {
+      display: flex;
+      flex-direction: row;
+      margin-top: 15px;
+    }
+    .review-box {
+      margin: 1vh 2vh 1vh 2vh;
+      background-color: #F9F7F8;
+      padding: 1vw;
+      transition: 0.2s;
+      width: 45vw;
+      height: 15vh;
+      max-height: 20vh;
+    }
+
+    .review-box:hover {
+      transform: scale(1.025);
+    }
+
+
+  .review-header {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom: 5px;
+  }
+
+    .rounded-circle {
+      height: 6vh;
+      width: 6vh;
+      margin-right: 1vh;
+    }
+
+  .reviewer-info {
+    display: inline-block;
+    margin-right: 2vw;
+  }
+
+  .rate {
+    color: #FBC773;
+  }
+
+  }
+}
