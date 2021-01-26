@@ -1,4 +1,12 @@
 <section class="movie-show">
+  <% if @movie.trailer %>
+  <div class='trailer-container'>
+    <div class='trailer-video-container'>
+      <span class='close' onclick="closeTrailer()">X</span>
+      <%= @movie.trailer.html_safe %>
+    </div>
+  </div>
+  <% end %>
   <div class="movie-show-container">
     <div class="movie-info">
       <%if @movie.photo.attached? %>
@@ -15,6 +23,12 @@
         <span class="movie-description"> <%= @movie.description %></span><br>
         <span class="movie-description">Diretor: <%= @movie.director %>.</span>
         <span class="movie-description">Tema: <%= @movie.genres %> </span>
+        <% if @movie.trailer %>
+        <div class='trailer-opener' onclick="openTrailer()">
+          <i class='fa fa-film'></i>
+          <span>Trailer</span>
+        </div>
+        <% end %>
         <div class="links-movies">
           <% if Review.where(user_id: current_user.id, movie_id: @movie.id ).exists? %>
             <b><%= link_to 'Editar Avaliação', edit_review_path(@movie, @review), class:'movie-link'%></b>
