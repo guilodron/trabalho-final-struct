@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
     before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+    before_action :movie_score, only: [:show]
     
     def index 
       print('oi')
@@ -10,6 +11,11 @@ class MoviesController < ApplicationController
     def show
       @movie = Movie.find(params[:id])
       @review = Review.find_by(user_id: current_user.id, movie_id: @movie.id)
+      if @count != 0
+        @movie.final_score = @f_score/@count
+      else
+        @movie.final_score = nil
+      end
     end
   
     def new
@@ -61,4 +67,16 @@ class MoviesController < ApplicationController
       params.require(:movie).permit(:name, :release_date, :genres, :description, :director, :trailer, :photo)
     end
 
+    def movie_score
+      movie = Movie.find(params[:id])
+      all_reviews = movie.reviews
+      @f_score = 0
+      @count = 0
+      all_reviews.each do |s|
+        if s.score != nil
+          @count += 1
+          @f_score += s.score
+        end
+      end
+    end
   end

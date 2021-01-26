@@ -1,0 +1,159 @@
+.movie-show {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+
+  .trailer-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    transition: 1s;
+    flex-direction: column;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    .trailer-video-container {
+      position: relative;
+      padding: 30px;
+      .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: white;
+        font-size: 26px;
+        font-weight: bold;
+        transition: 0.2s;
+      }
+      
+      .close:hover {
+        cursor: pointer;
+        color: rgb(190, 181, 181);
+        transform: scale(1.3);
+      }
+    }
+
+    iframe {
+      width: 800px;
+      height: 600px;
+    }
+  }
+
+  .trailer-opener {
+    font-size: 24px;
+    font-weight: bold;
+    color: #E43E54;
+    margin: 10px 0;
+    transition: 0.2s;
+  }
+
+  .trailer-opener:hover {
+    color: #b42a3c;
+    cursor: pointer;
+  }
+
+  .movie-show-container {
+    margin: 10vh 30vh 0 30vh;
+    min-height: 100vh;
+  }
+
+  .movie-info {
+    display: flex;
+    margin-bottom: 8vh;
+
+  .written-movie-info {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+    .movie-picture {
+      height: 40vh;
+      width: 15vw;
+      min-width: 15vw;
+      margin: 2vh 3vw 0 2vh;
+    }
+    .movie-name {
+      color: black;
+      font-size: 5vh;
+    }
+
+    .movie-score {
+      color: #FBC773;
+      font-size: 5vh;
+
+      i {
+        font-size: 4vh;
+      }
+    }
+
+    .movie-description {
+      text-align: justify;
+      color: #515151;
+    }
+
+    .links-movies {
+      flex-direction: row;
+
+      .movie-link {
+        text-decoration: none;
+        color: #E43E54;
+        transition: 1.5s;
+      }
+
+      .movie-link:hover {
+        color: #515151;
+      }
+
+    }
+  }
+
+  .movies-last-reviews {
+    .movie-reviews {
+      display: flex;
+      flex-direction: row;
+      margin-top: 15px;
+    }
+    .review-box {
+      margin: 1vh 2vh 1vh 2vh;
+      background-color: #F9F7F8;
+      padding: 1vw;
+      transition: 0.2s;
+      width: 45vw;
+      height: 15vh;
+      max-height: 20vh;
+    }
+
+    .review-box:hover {
+      transform: scale(1.025);
+    }
+
+
+  .review-header {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom: 5px;
+  }
+
+    .rounded-circle {
+      height: 6vh;
+      width: 6vh;
+      margin-right: 1vh;
+    }
+
+  .reviewer-info {
+    display: inline-block;
+    margin-right: 2vw;
+  }
+
+  .rate {
+    color: #FBC773;
+  }
+
+  }
+}

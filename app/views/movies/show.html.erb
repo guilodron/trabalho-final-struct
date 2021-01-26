@@ -1,3 +1,73 @@
-<h1>Eu sou a show</h1>
-<%= link_to 'nova review', new_review_path %>
+<section class="movie-show">
+  <% if @movie.trailer %>
+  <div class='trailer-container'>
+    <div class='trailer-video-container'>
+      <span class='close' onclick="closeTrailer()">X</span>
+      <%= @movie.trailer.html_safe %>
+    </div>
+  </div>
+  <% end %>
+  <div class="movie-show-container">
+    <div class="movie-info">
+      <%if @movie.photo.attached? %>
+        <%= image_tag(@movie.photo, class:'movie-picture')%>
+      <%else %>
+        <%= image_tag('blank-profile-picture.png', class:'movie-picture') %>
+      <% end %>
+      <div class="written-movie-info">
+        <b class="movie-name"><%= @movie.name %></b>
+        <div class="movie-score">
+          <i class="fa fa-star"></i>
+          <span><%= @movie.final_score %></span>
+        </div>
+        <span class="movie-description"> <%= @movie.description %></span><br>
+        <span class="movie-description">Diretor: <%= @movie.director %>.</span>
+        <span class="movie-description">Tema: <%= @movie.genres %> </span>
+        <% if @movie.trailer %>
+        <div class='trailer-opener' onclick="openTrailer()">
+          <i class='fa fa-film'></i>
+          <span>Trailer</span>
+        </div>
+        <% end %>
+        <div class="links-movies">
+          <% if Review.where(user_id: current_user.id, movie_id: @movie.id ).exists? %>
+            <b><%= link_to 'Editar Avaliação', edit_review_path(@movie, @review), class:'movie-link'%></b>
+          <%else %>
+            <b><%= link_to 'Avaliar o filme', new_review_path, class: 'movie-link' %></b>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="movies-last-reviews">
+      <b style="color:#E43E54; margin-bottom: 5vw"> Reviews: </b>
+      <div class=" movie-reviews">
+      <% count = 0 %>
+      <% @movie.reviews.reverse.each do |r| %>
+        <% if count < 6 %>
+        <div class="review-box">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <% if r.user.photo.attached?%>
+                <%= image_tag(r.user.photo, id: "profile-picture", class:"rounded-circle") %>
+              <%else %>
+                <%= image_tag('blank-profile-picture.png', id: 'profile-picture', class: 'rounded-circle') %>
+              <% end %>
+              <b><%= r.user.user_name %></b>
+            </div>
+            <b style="color:#E43E54"><%= r.movie.name %></b>
+            <div class="rate">
+              <i class="fa fa-star"></i>
+              <%= r.score %>
+            </div>
+          </div>
+          <div class="comment">
+            <%= r.comment %>
+          </div>
+        </div>
+      <% end %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</section>
 
