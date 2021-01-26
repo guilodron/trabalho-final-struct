@@ -3,7 +3,7 @@
     <div class="all-movies">
         <% if current_user.movies != nil %>
             <% current_user.movies.each do |movie| %>
-                <div class="all-movies-cell">
+                <%= link_to show_movie_path(movie.id), class: 'all-movies-cell' do %>
                     <% if movie.photo.attached? %>
                         <%= image_tag(movie.photo) %>
                     <% else %>
@@ -12,7 +12,7 @@
                     <div class="movie-dark">
                       <span><%= movie.name %></span>
                     </div>
-                </div>
+                <% end %>
             <% end %>
         <% end %>
     </div>

@@ -22,6 +22,11 @@
   overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
@@ -145,11 +150,13 @@ header {
         grid-template-columns: 1fr 1fr;
         grid-row-gap: 20px;
         .movie-cell {
+            overflow: hidden;
             display: flex;
             max-width: 350px;
             img {
                 width: 150px;
                 height: 150px;
+                transition: 0.2s;
             }
             .name-rating {
                 font-size: 21px;
@@ -167,6 +174,10 @@ header {
                     }
                 }
             }
+        }
+
+        .movie-cell:hover {
+            color: #2c2525;
         }
     }
 }
