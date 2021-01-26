@@ -62,16 +62,3 @@
   <% end %>
 
 </section>
-
-
-
-
-
-<%=link_to 'cadastrar', new_user_path %>
-<%@todos.each do |f| %>
-  <p><%= link_to 'editar info ', edit_user_path(f) %></p>
-  <p><%= link_to 'mostrar info', show_user_path(f) %></p>
-
-
-<% end %>
-
