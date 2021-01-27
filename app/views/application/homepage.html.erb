@@ -1,4 +1,3 @@
-
 <section class="latest-movies">
   <h1>Últimos adicionados</h1>
   <div class="movie-banners">
@@ -12,38 +11,36 @@
       <div class="name-rating-first">
         <span class="name"><%= @latest_first.name %></span>
         <div class="rating">
-          <i class="fa fa-star"></i>
-          <span><%= @latest_first.final_score %></span>
+          <i id="estrela" class="fa fa-star"></i>
+          <span><%= @final_score_first %></span>
         </div>
       </div>
     </div>
     <div class="latest-grid">
-      <% @latest.each do |m|%>
+      <% i = 0 %>
+      <% while i < @latest.count%>
         <div class="movie-cell">
-          <% if m.photo.attached?%>
-            <%= image_tag(m.photo, class: "movie-cell-banner") %>
+          <% if @latest[i].photo.attached?%>
+            <%= image_tag(@latest[i].photo, class: "movie-cell-banner") %>
           <%else %>
             <%= image_tag('blank-profile-picture.png', class: "movie-cell-banner") %>
           <% end %>
           <div class="name-rating">
-            <span><%= m.name %></span>
+            <span><%= @latest[i].name %></span>
             <div class="rating">
-              <i class="fa fa-star"></i>
-              <span><%= m.final_score %></span>
+              <i id="estrela" class="fa fa-star"></i>
+              <span><%= @final_scores[i] %></span>
             </div>
           </div>
         </div>
+      <% i += 1 %>
       <% end %>
     </div>
   </div>
-
-  
-
 </section>
 
 <section class="best-rated-movies">
   <h1>Melhores filmes</h1>
-
   <div class="rated-container">
     <% @best_rated.each do |m|%>
       <div class="rated-movie-cell">
@@ -60,5 +57,4 @@
     <i class="fa fa-list"></i>
     <span>Ver todos os filmes</span>
   <% end %>
-
 </section>
