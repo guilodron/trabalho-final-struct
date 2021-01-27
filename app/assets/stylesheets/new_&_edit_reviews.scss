@@ -46,6 +46,8 @@
   .new-review-form {
     margin-top: 10vh;
     display: flex;
+    flex-direction: column;
+    max-width: 63vw;
 
     .review-form {
       display: flex;

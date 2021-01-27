@@ -31,9 +31,9 @@
           <%= form.submit class:'submit-button', data: {confirm: "Deseja realizar essas alterações?"} %>
         </div>
       <% end %>
-    </div>
-    <div class="destroy-review-form">
-      <%= button_to "Excluir", destroy_review_path(@review.id), method: :delete, data: {confirm: "Apagar Review?"},  class:"destroy" %>
+      <div class="destroy-review-form">
+        <%= button_to "Excluir", destroy_review_path(@review.id), method: :delete, data: {confirm: "Apagar Review?"},  class:"destroy" %>
+      </div>
     </div>
   </div>
 </section>
