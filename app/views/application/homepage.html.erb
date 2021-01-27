@@ -2,7 +2,7 @@
 <section class="latest-movies">
   <h1>Últimos adicionados</h1>
   <div class="movie-banners">
-    <div class="latest-first">
+    <%= link_to show_movie_path(@latest_first.id), class:"latest-first" do %>
       <% if @latest_first.photo.attached?%>
         <%= image_tag(@latest_first.photo, class: "first-banner") %>
       <%else %>
@@ -16,10 +16,10 @@
           <span><%= @latest_first.final_score %></span>
         </div>
       </div>
-    </div>
+    <% end %>
     <div class="latest-grid">
       <% @latest.each do |m|%>
-        <div class="movie-cell">
+        <%= link_to show_movie_path(m.id), class: "movie-cell" do %>
           <% if m.photo.attached?%>
             <%= image_tag(m.photo, class: "movie-cell-banner") %>
           <%else %>
@@ -32,7 +32,7 @@
               <span><%= m.final_score %></span>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -46,13 +46,13 @@
 
   <div class="rated-container">
     <% @best_rated.each do |m|%>
-      <div class="rated-movie-cell">
+      <%= link_to show_movie_path(m.id), class: "rated-movie-cell" do %>
         <% if m.photo.attached?%>
           <%= image_tag(m.photo, class: "movie-cell-banner") %>
         <%else %>
            <%= image_tag('blank-profile-picture.png', class: "movie-cell-banner") %>
         <% end %>
-      </div>
+      <% end %>
     <% end %>
   </div>
 

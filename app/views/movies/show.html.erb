@@ -30,10 +30,15 @@
         </div>
         <% end %>
         <div class="links-movies">
-          <% if Review.where(user_id: current_user.id, movie_id: @movie.id ).exists? %>
-            <b><%= link_to 'Editar Avaliação', edit_review_path(@movie, @review), class:'movie-link'%></b>
-          <%else %>
-            <b><%= link_to 'Avaliar o filme', new_review_path, class: 'movie-link' %></b>
+          <% if logged_in? %>
+            <% if Review.where(user_id: current_user.id, movie_id: @movie.id ).exists? %>
+              <% review = Review.find_by(user_id: current_user.id, movie_id: @movie.id) %>
+              <b><%= link_to 'Editar Avaliação', edit_review_path(@movie, review), class:'movie-link'%></b>
+            <%else %>
+              <b><%= link_to 'Avaliar o filme', new_review_path, class: 'movie-link' %></b>
+            <% end %>
+          <% else %>
+            <b><%= link_to 'Avaliar o filme', new_user_path, class: 'movie-link' %></b>
           <% end %>
         </div>
       </div>

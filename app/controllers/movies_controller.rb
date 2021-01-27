@@ -10,7 +10,6 @@ class MoviesController < ApplicationController
   
     def show
       @movie = Movie.find(params[:id])
-      @review = Review.find_by(user_id: current_user.id, movie_id: @movie.id)
       if @count != 0
         @movie.final_score = @f_score/@count
       else
