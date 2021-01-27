@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
       if @count != 0
         @movie.final_score = @f_score/@count
       else
-        @movie.final_score = nil || " "
+        @movie.final_score = nil
       end
     end
   
