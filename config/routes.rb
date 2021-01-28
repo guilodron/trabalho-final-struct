@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     patch ':id/reviews/:review_id/edit', to: 'reviews#update'
     delete ':id/reviews/:review_id/apagar', to: 'reviews#destroy', as: 'destroy_review'
 
+    post ':id/watcheds/nova', to: 'watcheds#create', as: 'create_watched'
+
 
   end
 

@@ -4,4 +4,6 @@ class User < ApplicationRecord
   validates :email, :crypted_password, presence: true
   has_many :reviews
   has_many :movies, through: :reviews
+  has_many :watcheds
+  has_many :movies, through: :watcheds
 end
