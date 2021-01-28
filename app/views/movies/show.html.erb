@@ -23,7 +23,7 @@
         <span class="movie-description"> <%= @movie.description %></span><br>
         <span class="movie-description">Diretor: <%= @movie.director %>.</span>
         <span class="movie-description">Tema: <%= @movie.genres %> </span>
-        <% if @movie.trailer %>
+        <% if @movie.trailer != "" and @movie.trailer != nil %>
         <div class='trailer-opener' onclick="openTrailer()">
           <i class='fa fa-film'></i>
           <span>Trailer</span>
