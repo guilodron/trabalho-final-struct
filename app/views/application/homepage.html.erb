@@ -1,4 +1,11 @@
+<% if @latest_first == nil or @best_rated == nil or @latest == nil %>
+  <section class='no-movies'>
+    <h1>Estamos sem filmes no momento...</h1>
+    <%= image_tag('no-movies', class: "no-movies-image") %>
 
+  </section>
+
+<% else %>
 <section class="latest-movies">
   <h1>Últimos adicionados</h1>
   <div class="movie-banners">
@@ -62,3 +69,4 @@
   <% end %>
 
 </section>
+<% end %>

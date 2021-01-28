@@ -11,6 +11,10 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params.merge({user_id: current_user.id, movie_id: @movie.id}))
     begin
       @review.save!
+      @reviews = Review.where(movie_id: @movie.id)
+      @final = @reviews.map{|review| review.score}.sum / @reviews.count
+      @movie.final_score = @final
+      @movie.save!
       redirect_to show_movie_path(@movie.id)
       rescue StandardError => e
       flash[:alert] = e
@@ -24,6 +28,10 @@ class ReviewsController < ApplicationController
   def update
     begin
       @review.update!(review_params)
+      @reviews = Review.where(movie_id: @movie.id)
+      @final = @reviews.map{|review| review.score}.sum / @reviews.count
+      @movie.final_score = @final
+      @movie.save!
       rescue StandardError => e
       flash[:alert] = e
     end

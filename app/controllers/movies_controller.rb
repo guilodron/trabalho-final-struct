@@ -2,19 +2,18 @@ class MoviesController < ApplicationController
     before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
     before_action :movie_score, only: [:show]
     
-    def index 
-      print('oi')
-      print(params[:search])    
+    def index    
       @pagy, @movies = pagy(Movie.filter(params[:search]), items: 18)
     end
   
     def show
       @movie = Movie.find(params[:id])
-      if @count != 0
-        @movie.final_score = @f_score/@count
-      else
-        @movie.final_score = nil
-      end
+      # if @count != 0
+      #   @movie.final_score = @f_score/@count
+      # else
+      #   @movie.final_score = nil
+      # end
+      # @movie.save!
     end
   
     def new

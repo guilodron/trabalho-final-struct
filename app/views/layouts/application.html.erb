@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FinalProject</title>
+    <title>StructFilmes</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path('favicon.png') %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -15,7 +16,7 @@
         <img class="icon" src="/assets/icon.svg" alt="icon" />
       <% end %>
       <form>
-        <input placeholder="Pesquisar um filme" />
+        <input placeholder="Pesquisar um filme" disabled="true" />
       </form>
       <% if not logged_in? %>
       <%= link_to new_user_path, :class => 'login' do %>
