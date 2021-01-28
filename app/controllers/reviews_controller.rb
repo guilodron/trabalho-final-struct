@@ -40,7 +40,16 @@ class ReviewsController < ApplicationController
 
   def destroy
     begin
+      @movie = Movie.find(@review.movie_id)
       @review.destroy!
+      @reviews = Review.where(movie_id: @movie.id)
+      if @reviews.count == 0
+          @movie.final_score = nil
+      else
+        @final = @reviews.map{|review| review.score}.sum / @reviews.count
+        @movie.final_score = @final
+      end
+      @movie.save!
       flash[:alert] = 'Removido!'
       redirect_to show_movie_path(@review.movie.id)
     rescue StandardError => e
