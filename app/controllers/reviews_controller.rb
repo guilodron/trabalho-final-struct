@@ -52,6 +52,6 @@ class ReviewsController < ApplicationController
   end
 
   def which_review
-    @review = Review.find_by(params[:review_id])
+    @review = Review.find(params[:review_id])
   end
 end
