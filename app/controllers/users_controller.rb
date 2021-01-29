@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @watched_movies = @user.movies
+    @watched_movies = @user.watcheds
     @reviews = @user.reviews
   end
 

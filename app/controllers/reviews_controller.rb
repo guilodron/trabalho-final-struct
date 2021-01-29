@@ -15,6 +15,10 @@ class ReviewsController < ApplicationController
       @final = @reviews.map{|review| review.score}.sum / @reviews.count
       @movie.final_score = @final
       @movie.save!
+      if not Watched.where(user_id: current_user.id, movie_id: @movie.id ).exists?
+        watched = Watched.new({user_id: current_user.id, movie_id: @movie.id})
+        watched.save!
+      end
       redirect_to show_movie_path(@movie.id)
       rescue StandardError => e
       flash[:alert] = e

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_10_012543) do
+ActiveRecord::Schema.define(version: 2021_01_28_204520) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(version: 2021_01_10_012543) do
     t.text "info"
     t.text "favorite_genres"
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "watcheds", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_watcheds_on_movie_id"
+    t.index ["user_id"], name: "index_watcheds_on_user_id"
   end
 
 end

@@ -34,11 +34,16 @@
             <% if Review.where(user_id: current_user.id, movie_id: @movie.id ).exists? %>
               <% review = Review.find_by(user_id: current_user.id, movie_id: @movie.id) %>
               <b><%= link_to 'Editar Avaliação', edit_review_path(@movie, review), class:'movie-link'%></b>
-            <%else %>
+            <% elsif  Watched.where(user_id: current_user.id, movie_id: @movie.id ).exists?%>
               <b><%= link_to 'Avaliar o filme', new_review_path, class: 'movie-link' %></b>
-            <% end %>
+              <% else %>
+              <b><%= link_to 'Avaliar o filme', new_review_path, class: 'movie-link' %></b>
+              <b><%= link_to 'Marcar como visto', create_watched_path(@movie.id), method: :post, class:'movie-link'%></b>
+        <% end %>
           <% else %>
             <b><%= link_to 'Avaliar o filme', new_user_path, class: 'movie-link' %></b>
+            <b><%= link_to 'Marcar como visto', new_user_path, class:'movie-link'%></b>
+
           <% end %>
         </div>
       </div>
@@ -48,7 +53,7 @@
       <div class=" movie-reviews">
       <% count = 0 %>
       <% @movie.reviews.reverse.each do |r| %>
-        <% if count < 6 %>
+        <% if count < 6 and r.comment != nil and r.comment != ""%>
         <div class="review-box">
           <div class="review-header">
             <div class="reviewer-info">
